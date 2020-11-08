@@ -10,7 +10,7 @@
                         <form action="/admin/posts/{{$post->id}}" method="post" class='d-inline float-right'>
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-outline-secondary">Delete Category</button>
+                            <button type="submit" class="btn btn-outline-secondary">Delete Post</button>
                         </form>
                     </h2>
                     
