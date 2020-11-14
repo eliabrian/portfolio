@@ -18,6 +18,7 @@ class Post extends Model
         'user_id',
         'summary',
         'content',
+        'draft'
     ];
 
     public function category()

@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     Route::get('/posts/{post:slug}/edit', [App\Http\Controllers\PostController::class, 'edit'])->name('admin.posts.edit');
     Route::put('/posts/{post}', [App\Http\Controllers\PostController::class, 'update'])->name('admin.posts.update');
     Route::delete('/posts/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('admin.posts.delete');
+    Route::put('/posts/{post}/change', [App\Http\Controllers\PostController::class, 'changePostStatus'])->name('admin.posts.change_post_status');
 
     //Categories Routes
     Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('admin.categories.index');

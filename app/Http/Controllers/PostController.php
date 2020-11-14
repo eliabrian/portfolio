@@ -71,6 +71,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        
         return view('post', compact('post'));
     }
 
@@ -128,4 +129,18 @@ class PostController extends Controller
 
         return redirect()->to('/admin/posts');
     }
+
+    /**
+     * Change a post status between draft or published.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function changePostStatus(Post $post)
+    {
+        $post->update(['draft' => !$post->draft]);
+
+        return redirect()->to('/admin/posts/' . $post->slug . '/edit');
+    }
+
 }

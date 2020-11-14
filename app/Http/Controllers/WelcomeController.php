@@ -10,6 +10,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')
+        ->where('draft', false)
         ->get();
         
         $favorites = Post::where('draft', 0)

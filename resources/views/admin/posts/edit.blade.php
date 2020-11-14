@@ -7,6 +7,11 @@
                 <div class="card-body">
                     <h2 class="card-title">
                         Edit Post
+                        <form action="/admin/posts/{{$post->id}}/change" method="post" class='d-inline float-right ml-3'>
+                            @method('put')
+                            @csrf
+                            <button type="submit" class="btn btn-outline-primary">{{ $post->draft ? 'Publish' : 'Draft' }} Post</button>
+                        </form>
                         <form action="/admin/posts/{{$post->id}}" method="post" class='d-inline float-right'>
                             @method('delete')
                             @csrf
