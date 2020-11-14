@@ -9,6 +9,6 @@ class BlogController extends Controller
 {   
     public function index()
     {
-        return view('blog', ['posts' => Post::orderBy('created_at', 'desc')->get()]);
+        return view('blog', ['posts' => Post::orderBy('created_at', 'desc')->where('draft', false)->get()]);
     }
 }
