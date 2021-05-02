@@ -15,13 +15,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-dark.min.css" />
+    <style>
+        pre > code {
+            font-size: .8rem;
+        }
+    </style>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js" integrity="sha512-9+422Bs3A87UkWfp+qV80Nfv9arhbCXKY1rxrF2seorI36mIIstMiuBfyKLF1yH1nnzQkEWq2xrzT4XU3Z+vrA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-php.min.js" integrity="sha512-yPrXSLcjHpSl8cnmaKvBpWbYNgMNZp4M0GK36bUf6+/aZOkpQbmHznrRgFxDZ3efy0VoVx2MebfwJqjYHbQ1JQ==" crossorigin="anonymous"></script>
-
+    
     @yield('style')
 </head>
 <body style="font-size: 1.2rem; font-weight:400; line-height:1.6em;">
@@ -36,5 +39,11 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </body>
 </html>
